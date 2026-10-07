@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Constants Problem — EFMW</title>
+<style>
+body{margin:0;background:#071018;color:#eef5fb;font:17px/1.7 Georgia,serif}a{color:#95ddff}
+main{max-width:920px;margin:auto;padding:50px 22px 80px}h1{font-size:clamp(3rem,8vw,6rem);line-height:.95;letter-spacing:-.05em}
+h2{margin-top:2.2em;font-size:2rem}.deck{font-size:1.3rem;color:#cbd7e7}.box,.eq{border:1px solid #294258;background:#0e1824;border-radius:14px;padding:20px;margin:24px 0}.eq{text-align:center;font-size:1.2rem}
+.good{border-left:4px solid #9fe7b7}.warn{border-left:4px solid #ffd28b}code{color:#c6b7ff}
+nav{font-family:system-ui,sans-serif;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+table{width:100%;border-collapse:collapse;background:#0e1824}th,td{border-bottom:1px solid #294258;padding:12px;text-align:left}
+</style></head>
+<body><main>
+<nav><a href="EFMWConstants/Core.lean">Lean</a><a href="DEPENDENCY_MAP.md">Dependency Map</a><a href="CLAIMS_BOUNDARY.md">Claims Boundary</a><a href="README.md">README</a></nav>
+<p><strong>EFMW · corrected 2026 formulation</strong></p>
+<h1>The Constants Problem</h1>
+<p class="deck">Physics already knows that its fundamental constants form a network. The harder problem is to determine which quantities are independent inputs, which are derived identities, which depend on unit conventions, and whether a deeper theory can predict a dimensionless constant without fitting it.</p>
+
+<h2>From “all constants are connected” to a real scientific question</h2>
+<p>The 2025 paper <em>One Paper to Join Them All</em> was strongest where it described the established network connecting gravitation, electromagnetism, quantum mechanics and relativity. But relatedness is not derivation.</p>
+<div class="eq">α = e² / (4π ε₀ ħ c)</div>
+<div class="eq">c⁻² = μ₀ ε₀</div>
+<div class="eq">ℓ<sub>P</sub>² = ħG/c³ &nbsp; · &nbsp; t<sub>P</sub>² = ħG/c⁵ &nbsp; · &nbsp; m<sub>P</sub>² = ħc/G</div>
+<p>These equations prove that constants participate in common structures. They do not prove that one deeper law generates their measured values.</p>
+
+<h2>The distinction that matters</h2>
+<table><tr><th>Class</th><th>Meaning</th></tr>
+<tr><td>Identity</td><td>An exact algebraic relationship inside an established theory.</td></tr>
+<tr><td>Input</td><td>A quantity whose value must be measured or stipulated.</td></tr>
+<tr><td>Convention</td><td>A numerical value partly fixed by our unit system.</td></tr>
+<tr><td>Prediction</td><td>A quantity derived from fewer independently specified assumptions.</td></tr>
+</table>
+
+<p>The deepest target is a <strong>dimensionless</strong> quantity. Dimensionful numbers change when units change. Dimensionless constants do not.</p>
+
+<div class="box warn"><strong>Therefore the serious EFMW target is not “derive c in meters per second.” It is something like: derive α from independently fixed FieldSpace invariants, symmetry data, topology, or normalized couplings—with no fitted α hiding on the right-hand side.</strong></div>
+
+<h2>The modern EFMW hypothesis</h2>
+<div class="eq">𝒢(Θ) → {dimensionless couplings, invariant ratios, effective constants}</div>
+<p>Here Θ must be a smaller primitive structure than the output set. If α is already encoded in Θ, reproducing α is circular.</p>
+
+<h2>What the Lean formalization proves</h2>
+<p>The included Lean project machine-checks algebraic consequences of the standard fine-structure, Maxwell, and Planck-scale relations. It also defines an abstract generative model and a non-circular primitive example based only on integer data.</p>
+<div class="box good"><strong>Formal result:</strong> the logical distinction between standard identities and a generative prediction is now explicit and machine-readable. <strong>Not a result:</strong> the measured value of α has not been derived from EFMW.</div>
+
+<h2>The research program</h2>
+<p>A serious EFMW constants program should now:</p>
+<ol>
+<li>enumerate every primitive FieldSpace coefficient;</li>
+<li>separate dimensionful from dimensionless parameters;</li>
+<li>remove unit-convention redundancy;</li>
+<li>identify symmetry and reciprocity reductions;</li>
+<li>count the truly independent dimensionless inputs;</li>
+<li>attempt to derive a measured dimensionless coupling from the remainder.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>The constants already belong to one physical network. A unifying theory earns something new only when it reduces what must be assumed.</p>
+<p>That is the corrected meaning of “one paper to join them all.” Not a page where every constant appears—but a theory in which at least one formerly independent number becomes unavoidable.</p>
+</main></body></html>
