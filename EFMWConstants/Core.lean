@@ -73,9 +73,13 @@ structure IntegerInvariantPrimitive where
   k : ℤ
   k_ne_zero : k ≠ 0
 
-/-- A toy output map from integer data. It is useful for testing the interface, not as a physical derivation of alpha. -/\ndef integerRatioModel : GenerativeModel IntegerInvariantPrimitive where
+/-- A toy output map from integer data. It is useful for testing the interface, not as a physical derivation of alpha. -/
+def integerRatioModel : GenerativeModel IntegerInvariantPrimitive where
   alphaOut p := (p.n : ℝ) / (p.k : ℝ)
 
+/-- If a supplied integer pair has the target ratio, the toy generator returns that target.
+This theorem is intentionally tautological and does not establish independent prespecification,
+parameter reduction, or a physical derivation of α. -/
 theorem integer_ratio_generates (p : IntegerInvariantPrimitive) (target : ℝ)
     (h : (p.n : ℝ) / (p.k : ℝ) = target) :
     Generates integerRatioModel p target := by
