@@ -9,7 +9,7 @@ The project formalizes standard algebraic identities involving:
 
 ## Formalized hypothesis
 
-An abstract generative model maps a smaller primitive parameter object to a target dimensionless coupling.
+An abstract generative model maps a primitive parameter object to a target dimensionless coupling. The current Lean interface does not itself prove that the primitive parameters are fewer, independently prespecified, or unfitted; those are additional provenance/model-selection obligations.
 
 ## Not established
 
