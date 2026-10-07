@@ -27,3 +27,5 @@ python verify_constants.py
 ```
 
 Lean proves consequences of the stated definitions and assumptions. It does not prove that EFMW derives any measured physical constant.
+
+The numerical verifier uses the NIST 2022 CODATA recommended values, currently the latest available CODATA adjustment.
