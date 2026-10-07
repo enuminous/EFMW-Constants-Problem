@@ -39,3 +39,8 @@ Bad:
 Potentially meaningful:
 - deriving \(\alpha\) from independently fixed integer, topological, symmetry, or invariant data;
 - deriving a new relation among multiple dimensionless observables that can be tested independently.
+
+
+## Numerical provenance
+
+The repository's numerical verifier uses the NIST **2022 CODATA recommended values**, the latest CODATA adjustment currently available at the time of this audit (October 2026). In particular it uses \(\epsilon_0=8.8541878188\times10^{-12}\,\mathrm{F\,m^{-1}}\) and compares against \(\alpha^{-1}=137.035999177\). Source: NIST Fundamental Physical Constants, https://physics.nist.gov/constants.
