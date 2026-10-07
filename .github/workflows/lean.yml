@@ -1,0 +1,33 @@
+name: Lean
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Elan / Lean
+        shell: bash
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Resolve dependencies
+        run: lake update
+
+      - name: Build formalization
+        run: lake build
+
+      - name: Numerical identity check
+        run: python verify_constants.py
+
+      - name: Reject proof placeholders
+        run: |
+          if grep -RInE '\b(sorry|admit)\b' EFMWConstants; then
+            echo "Found proof placeholder"
+            exit 1
+          fi
