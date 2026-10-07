@@ -67,13 +67,13 @@ theorem generates_iff {Primitive : Type*} (M : GenerativeModel Primitive)
     Generates M p target ↔ M.alphaOut p = target := by
   rfl
 
-/-- Primitive integer data with no explicit alpha parameter. -/
+/-- Primitive integer data with no explicit alpha field. This is only a syntactic property; it does not prove the integers were chosen independently of the target. -/
 structure IntegerInvariantPrimitive where
   n : ℤ
   k : ℤ
   k_ne_zero : k ≠ 0
 
-def integerRatioModel : GenerativeModel IntegerInvariantPrimitive where
+/-- A toy output map from integer data. It is useful for testing the interface, not as a physical derivation of alpha. -/\ndef integerRatioModel : GenerativeModel IntegerInvariantPrimitive where
   alphaOut p := (p.n : ℝ) / (p.k : ℝ)
 
 theorem integer_ratio_generates (p : IntegerInvariantPrimitive) (target : ℝ)
