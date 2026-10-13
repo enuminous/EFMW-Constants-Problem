@@ -17,7 +17,7 @@ structure FineStructureData where
 theorem alpha_mul_denom_eq_e_sq (d : FineStructureData) :
     d.alpha * (4 * Real.pi * d.eps0 * d.hbar * d.c) = d.e^2 := by
   rw [d.law]
-  field_simp [d.denom_ne_zero]
+  exact div_mul_cancel₀ _ d.denom_ne_zero
 
 /-- Maxwell relation in squared form. -/
 structure MaxwellData where
@@ -31,7 +31,7 @@ theorem maxwell_rearranged (d : MaxwellData) :
     1 = d.mu0 * d.eps0 * d.c^2 := by
   have hc2 : d.c^2 ≠ 0 := pow_ne_zero _ d.c_ne_zero
   calc
-    1 = (1 / d.c^2) * d.c^2 := by field_simp [hc2]
+    1 = (1 / d.c^2) * d.c^2 := (div_mul_cancel₀ 1 hc2).symm
     _ = (d.mu0 * d.eps0) * d.c^2 := by rw [d.law]
 
 /-- Squared Planck-scale definitions. -/
@@ -52,7 +52,6 @@ theorem planck_length_time_relation (d : PlanckData) :
     d.lP2 = d.tP2 * d.c^2 := by
   rw [d.lP2_law, d.tP2_law]
   field_simp [d.c_ne_zero]
-  ring
 
 /-- Abstract generative model for a dimensionless target. -/
 structure GenerativeModel (Primitive : Type*) where

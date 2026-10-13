@@ -24,3 +24,7 @@ axiom, a placeholder proof, and native evaluation in a proof.
 
 These checks establish consequences of the definitions and supplied hypotheses.
 They do not establish that the model assumptions are physical laws.
+
+## Compilation repairs after restoring the package
+
+The first complete build exposed division-cancellation tactic failures and an extra tactic after a solved goal. Proofs now use explicit cancellation lemmas; all theorem statements and hypotheses are unchanged.
